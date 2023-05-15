@@ -1,0 +1,15 @@
+[controlplane]
+kubernetes-controlplane-1 ansible_host=192.168.192.201 ansible_connection=ssh
+kubernetes-controlplane-2 ansible_host=192.168.192.202 ansible_connection=ssh
+
+[node]
+kubernetes-node-1 ansible_host=192.168.192.211 ansible_connection=ssh
+
+
+[controlplane:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file="~/id_ed25519"
+
+[node:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file="~/id_ed25519"
